@@ -53,16 +53,9 @@ run_analysis<-function(){
   names(data)<-gsub("gravityMean\\.","Gravity\\.Mean",names(data))
   names(data)<-gsub("\\.\\.","\\.",names(data))
   
-  #names(data)<-gsub("AccMean","Acc.Mean",names(data))
-  #names(data)<-gsub("JerkMean\\.","Jerk.Mean",names(data))
-  #
-  #names(data)<-gsub("\\.\\.\\.","\\.",names(data))
-  #names(data)<-gsub("\\.\\.","\\.",names(data))
-  #names(data)<-gsub("gravityMean\\.","Gravity.Mean",names(data))
-  #MeanGravity
-  #GyroMean
-  #Angle.Body.Acc.Mean.Gravity.
-return (data)
+  tidy_set<-average_data(data)
+  
+return (tidy_set)
 }
 
 average_data<-function(data_set){
